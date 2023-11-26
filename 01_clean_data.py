@@ -117,7 +117,6 @@ all_days.columns = "day_" + all_days.columns.to_series().astype(str).str.zfill(3
 
 # Save as a TSV (since TSVs are more robust than CSVs)
 intermed_dir = "intermediate_files"
-os.makedirs(intermed_dir, exist_ok=True)
 all_days.to_csv(f"{intermed_dir}/data_cleaned.tsv", sep="\t", index=True)
 
 # Linecharts showed that day 39 is an outlier for most samples (verified in check_blip.py). We'll exclude it.
