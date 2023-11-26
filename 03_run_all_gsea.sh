@@ -2,8 +2,9 @@
 
 # Usage: ./03_run_all_gsea.sh PATH/TO/GSEA/CLI/EXECUTABLE/CALLED/gsea-cli.sh
 
-# FYI: If you previously have run this script, this script will move the results from the previous run to a different directory in the same location with the name "old_gsea_res_moved_" plus a timestamp.
 # GSEA is installable from <https://www.gsea-msigdb.org/gsea/downloads.jsp>, and the gsea-cli.sh executable will be in the installation directory
+
+# FYI: If you previously have run this script, this script will move the results from the previous run to a different directory in the same location with the name "old_gsea_res_moved_" plus a timestamp.
 
 # Make directory for results within the intermediate files directory
 idir=intermediate_files
@@ -17,6 +18,7 @@ fi
 mkdir $resdir
 
 # Run GSEA Prerank with each of the different GMT files
+# GMT files are lists of gene sets to run GSEA with. These ones were downloaded from the GSEA website.
 for gmt in $idir/gmts/*; do
     gmtname=$(basename -- $gmt)
     gmtresdir=$resdir/$gmtname

@@ -5,5 +5,7 @@ __pychache__/
 dist/
 build/
 .DS_Store
-intermediate_files/
+intermediate_files/*
 output_charts/
+
+!intermediate_files/gmts
